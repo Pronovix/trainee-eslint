@@ -1,12 +1,14 @@
-FROM node:current
+FROM node:current-alpine
 
-ENV APP_ROOT="/app"
-ENV PATH="/home/node/.yarn/bin:${APP_ROOT}/node_modules/.bin:${PATH}"
-RUN mkdir -p "${APP_ROOT}/target"
+USER 1000:1000
 
-WORKDIR /app
+RUN mkdir -p /home/node/app
 
-COPY docker_entrypoint.sh package.json .eslintrc.json .prettierrc.json .eslintignore ./
+WORKDIR /home/node/app
+
+COPY --chown=1000:1000 docker_entrypoint.sh package.json .eslintrc.json .prettierrc.json .eslintignore ./
+
+ENV PATH=$PATH:/home/node/app/node_modules/.bin
 
 RUN yarn install
 

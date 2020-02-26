@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env ash
 
 set -e
 
 TARGET="target/$1 ${@:2}"
 
-if test -n "$(find /app/target/$1 -name '*.js' -print -quit)"
+if test -n "$(find /home/node/app/target/$1 -name '*.js' -print -quit)"
 then
     eslint $TARGET
 else
