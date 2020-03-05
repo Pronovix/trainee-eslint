@@ -1,10 +1,10 @@
 {
-  "extends": ["eslint:recommended", "prettier"],
-  "plugins": ["es5", "prettier"],
+  "extends": ["eslint:recommended", "prettier", "jquery"],
+  "plugins": ["es5", "prettier", "jquery"],
   "root": true,
   "env": {
     "browser": true,
-    "es6": true
+    "jquery": true
   },
   "rules": {
     "prettier/prettier": "error",
@@ -14,6 +14,11 @@
     "es5/no-template-literals": "error",
     "es5/no-destructuring": "error",
     "eqeqeq": "error",
-    "no-console": "error"
+    "no-console": "error",
+    "space-in-parens": ["error", "never"],
+    "quotes": ["error", "single"],
+    "computed-property-spacing": ["error", "never"],
+    "max-len": "off",
+    "comma-dangle": "off"
   }
 }
