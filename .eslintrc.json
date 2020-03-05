@@ -8,7 +8,7 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    "es5/no-es6-methods": "error",
+    "es5/no-es6-methods": "off",
     "es5/no-arrow-functions": "error",
     "es5/no-block-scoping": "error",
     "es5/no-template-literals": "error",
